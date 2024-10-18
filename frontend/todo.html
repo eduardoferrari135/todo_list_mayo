@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>To-Do List</title>
+	<link rel="stylesheet" href="https://cdn.simplecss.org/simple.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+	<h2>To-Do List</h2>
+	<div>
+		<button id="logout-button" onclick="logout()">Logout</button>
+	</div>
+	<form id="add-task-form">
+		<input type="text" id="new-task" placeholder="Add a new task" required>
+		<button type="submit">Add Task</button>
+	</form>
+	<div id="todo-list"></div>
+	<div id="todo-error" style="color: red;"></div>
+
+	<script src="script.js"></script>
+</body>
+
+</html>
