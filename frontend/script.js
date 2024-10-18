@@ -1,6 +1,6 @@
-const BASE_URL = 'http://107.23.7.112:8000';
+const BASE_URL = 'https://starfish-app-cx6jf.ondigitalocean.app';
 
-// Login function
+// Função de Login - Envia os dados do formulário de login via AJAX e armazena o token de autenticação no localStorage se bem-sucedido
 $('#login-form').on('submit', function(e) {
 	e.preventDefault();
 	const username = $('#username').val();
@@ -23,7 +23,7 @@ $('#login-form').on('submit', function(e) {
 	});
 });
 
-// Sign-up function
+// Função de Cadastro - Envia dados para a criação de um novo usuário e armazena o token de autenticação no localStorage se bem-sucedido
 $('#sign-up-button').on('click', function() {
 	const username = $('#username').val();
 	const password = $('#password').val();
@@ -45,7 +45,7 @@ $('#sign-up-button').on('click', function() {
 	});
 });
 
-// Fetch and display tasks
+// Função para Buscar e Exibir Tarefas - Faz uma requisição GET para buscar as tarefas do usuário autenticado e exibe na página
 function fetchTasks() {
 	$.ajax({
 		url: `${BASE_URL}/todo-list`,
@@ -103,7 +103,7 @@ function fetchTasks() {
 	});
 }
 
-// Toggle task status function
+// Função para Alternar o Status da Tarefa - Altera o status de uma tarefa específica (Pendente/Completa) enviando uma requisição PUT
 function toggleTaskStatus(taskId) {
 	$.ajax({
 		url: `${BASE_URL}/todo-list/status/${taskId}`,
@@ -120,7 +120,7 @@ function toggleTaskStatus(taskId) {
 	});
 }
 
-// Delete task function
+// Função para Deletar Tarefa - Remove uma tarefa específica enviando uma requisição DELETE
 function deleteTask(taskId) {
 	$.ajax({
 		url: `${BASE_URL}/todo-list/${taskId}`,
@@ -137,7 +137,8 @@ function deleteTask(taskId) {
 	});
 }
 
-// Add new task
+// Função para Adicionar Nova Tarefa - Envia uma requisição POST para o backend e atualiza a lista de tarefas com a função
+// fetchTasks().
 $('#add-task-form').on('submit', function(e) {
 	e.preventDefault();
 	const newTask = $('#new-task').val();
@@ -160,12 +161,13 @@ $('#add-task-form').on('submit', function(e) {
 	});
 });
 
+// Remove o token de autorização do local storage e redireciona o usuário para a tela de login.
 function logout() {
 	localStorage.removeItem('auth_token');
 	window.location.href = 'index.html';
 }
 
-// Fetch tasks when loading the to-do list page
+// Atualiza a lista de tarefas quando entra na página 
 if (window.location.pathname.endsWith('todo.html')) {
 	fetchTasks();
 }

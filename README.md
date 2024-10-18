@@ -4,7 +4,7 @@ Esse repositório contém o código feito para realizar uma lista de tarefas com
 
 ## Demo 🚀
 
-[Link do vídeo de demonstração](https://drive.google.com/file/d/1CgCynwS4GLbYaOaKUrTAcu_l7m3nRh9e/view?usp=sharing)
+[Link da aplicação](https://todo-list-bucket.nyc3.digitaloceanspaces.com/index.html)
 
 ## Estrutura do Sistema 📁
 
@@ -54,9 +54,9 @@ Por fim, a pasta `frontend` contém a interface gráfica do sistema feito com HT
 
 **Servidor:** FastAPI, Docker 
 
-**Banco de Dados**: MySQL (dados persistentes), Redis (cache)
+**Banco de Dados:** MySQL (dados persistentes), Redis (cache)
 
-**Infraestrutura:** AWS EC2 (backend FastAPI, banco de dados Redis), AWS S3 (hospedagem do frontend), RDS (banco MySQL)
+**Infraestrutura:** DigitalOcean AppPlatform (backend), DigitalOcean Spaces (frontend, similar ao AWS S3), DigitalOcean managed databases
 
 
 ## Features extra 

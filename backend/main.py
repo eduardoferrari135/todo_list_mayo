@@ -12,7 +12,7 @@ app = FastAPI()
 # origens diferentes (Cross-Origin Resource Sharing).
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://todo-bucket-mayo.s3-website-us-east-1.amazonaws.com", "http://localhost:5500"], 
+    allow_origins=["https://todo-list-bucket.nyc3.digitaloceanspaces.com", "http://localhost:5500"], 
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
